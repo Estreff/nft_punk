@@ -17,7 +17,7 @@ const Main = ({ selectedPunk, punkListData }) => {
 
   useEffect(() => {
     setActivePunk(punkListData[selectedPunk]);
-    console.log('Data: ', punkListData);
+    // console.log('Data: ', punkListData);
   }, [punkListData, selectedPunk]);
 
   return (
