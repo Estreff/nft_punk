@@ -10,14 +10,15 @@ function App() {
   const [selectedPunk, setSelectedPunk] = useState(0);
 
   useEffect(() => {
+    const url =
+      'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0xcB181810DD07DF2963F328dcD53F3718f8640707';
     const config = {
       crossdomain: true,
+      headers: {},
     };
+
     const getMyNfts = async () => {
-      const openSeaData = await axios.get(
-        'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0xcB181810DD07DF2963F328dcD53F3718f8640707',
-        config
-      );
+      const openSeaData = await axios.get(url, config);
       setPunkListData(openSeaData.data.assets);
     };
 
